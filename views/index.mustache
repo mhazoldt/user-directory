@@ -1,0 +1,30 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <ul id="gridList">
+            {{#data}}
+                {{#users}}
+                    <li>
+                        <div>
+                            <img src="{{avatar}}"><br>
+                            <div class="nameText">
+                                <a class="nameText" style="text-decoration: none;" href="/user/{{username}}">
+                                    {{name}}
+                                </a>
+                            </div>
+                            {{#company}}
+                                <span class="employedText">{{job}}, {{.}}</span>
+                            {{/company}}
+                            {{^company}}
+                                <span class="unemployedText">Available for hire</span>
+                            {{/company}}
+                        </div>
+                    </li>
+                {{/users}}                                           
+            {{/data}}
+        </ul>
+    </body>
+</html>
